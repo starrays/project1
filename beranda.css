@@ -1,0 +1,441 @@
+:root {
+  --brand:        #3B82F6; 
+  --brand-dark:   #2563EB; 
+  --bg-main:      #0B1121; 
+  --bg-grad:      #172A4F; 
+  --surface:      #111C33; 
+  --input-bg:     #1E2B45; 
+  --border:       #2A3B5C; 
+  --text:         #F8FAFC; 
+  --muted:        #94A3B8; 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background-color: var(--bg-main);
+  color-scheme: dark;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-image: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-grad) 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--text);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.text-muted {
+  color: var(--muted) !important;
+}
+
+.custom-navbar {
+  background-color: rgba(11, 17, 33, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom-color: var(--border) !important;
+  transition: all 0.3s ease; 
+}
+
+.navbar-brand {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--brand) !important;
+  font-size: 24px;
+  letter-spacing: -0.5px;
+}
+
+.text-accent {
+  color: #FF6B00;
+}
+
+.brand-text {
+  color: var(--brand);
+}
+
+.custom-offcanvas {
+  background-color: var(--surface);
+  color: var(--text);
+  border-right: 1px solid var(--border);
+}
+
+.menu-list .list-group-item {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 16px 20px;
+  border: none;
+  background-color: transparent;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+.menu-list .list-group-item i {
+  color: var(--muted);
+  transition: all 0.2s ease;
+}
+
+.menu-list .list-group-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--brand);
+}
+
+.menu-list .list-group-item:hover i {
+  color: var(--brand);
+}
+
+.menu-list .list-group-item.active {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: var(--brand);
+}
+
+.menu-list .list-group-item.active i {
+  color: var(--brand);
+}
+
+.home-hero {
+  padding: 80px 0;
+}
+
+.home-hero .eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #60A5FA;
+  background: rgba(59, 130, 246, 0.15);
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+
+.hero-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Gambar memenuhi kotak secara proporsional */
+    display: block;
+}
+
+.hero-image-placeholder {
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+  height: 450px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.btn-brand {
+  background-color: var(--brand);
+  color: var(--white);
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-brand:hover {
+  background-color: var(--brand-dark);
+  color: var(--white);
+}
+
+.btn-outline-brand {
+  color: var(--brand);
+  border: 2px solid var(--brand);
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  padding: 8px 20px;
+  border-radius: 8px;
+}
+
+.btn-outline-brand:hover {
+  background-color: var(--brand);
+  color: var(--white);
+}
+
+.bg-surface-custom {
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.feature-card, .vehicle-card, .step-card, .testimonial-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px; /* Mengembalikan sudut membulat */
+  color: var(--text);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-card:hover, .vehicle-card:hover, .step-card:hover, .testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
+  border-color: var(--brand);
+}
+
+.icon-wrap {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-brand-light {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #60A5FA !important; 
+}
+
+.section-label {
+  display: inline-flex; 
+  align-items: center; 
+  gap: 8px;
+  font-size: 12px; 
+  font-weight: 700; 
+  letter-spacing: .08em;
+  text-transform: uppercase; 
+  color: #60A5FA;
+  margin-bottom: 8px;
+}
+
+.section-label::before {
+  content: '';
+  display: block; 
+  width: 20px; 
+  height: 2px;
+  background: var(--brand);
+  border-radius: 2px;
+}
+
+.stats-section {
+  background: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-card {
+  padding: 30px 20px;
+  border-radius: 12px;
+  background: rgba(255,255,255, 0.03); 
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255, 0.06);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: var(--brand);
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.vehicle-card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px; 
+}
+
+.vehicle-image {
+  width: 100%;
+  height: 150px;
+  background: var(--input-bg);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: var(--muted);
+  margin-bottom: 15px;
+}
+
+.vehicle-card h5 {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.vehicle-price {
+  font-weight: 700;
+  color: #60A5FA;
+  font-size: 14px;
+}
+
+.vehicle-card .btn-sm {
+  padding: 6px 14px;
+  font-size: 12px;
+}
+
+.step-card {
+  padding: 30px 20px; 
+  height: 100%; 
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 auto 15px;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.step-card h5 {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.testimonial-card .bi-star-fill {
+  font-size: 14px;
+}
+
+.accordion-item {
+  background-color: transparent !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 12px !important;
+  overflow: hidden; 
+  margin-bottom: 16px;
+}
+
+.accordion-button {
+  background-color: var(--surface) !important;
+  color: var(--text) !important;
+  border: none !important;
+  padding: 18px 20px;
+  font-size: 15px;
+  box-shadow: none !important; 
+  transition: all 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--input-bg) !important;
+  color: var(--brand) !important;
+  border-bottom: 1px solid transparent;
+}
+
+.accordion-button::after {
+  filter: invert(1) brightness(100%);
+}
+
+.accordion-button:not(.collapsed)::after {
+  filter: invert(0.4) sepia(1) saturate(5) hue-rotate(200deg);
+}
+
+.accordion-body {
+  background-color: var(--surface);
+  padding: 18px 20px;
+  border-top: 1px solid var(--border);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+  border-radius: 20px;
+  margin: 20px;
+  padding: 60px 20px !important;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.cta-section .btn-light {
+  padding: 12px 40px;
+  border-radius: 8px;
+  background-color: var(--text);
+  color: var(--bg-main) !important;
+  transition: all 0.3s ease;
+}
+
+.cta-section .btn-light:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+}
+
+/* ── FOOTER ── */
+.custom-footer {
+  background-color: var(--bg-main);
+  border-top: 1px solid var(--border);
+}
+
+.custom-footer h6 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.custom-footer a {
+  transition: color 0.2s ease;
+}
+
+.custom-footer a:hover {
+  color: var(--brand) !important;
+}
+
+.custom-footer .bi {
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.custom-footer ul li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .cta-section {
+    margin: 10px;
+    padding: 40px 20px !important;
+  }
+
+  .cta-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .step-number {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .home-hero {
+    padding: 60px 0;
+  }
+
+  .home-hero .display-4 {
+    font-size: 2rem;
+  }
+}

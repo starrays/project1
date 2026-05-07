@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - EasyGo</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="beranda.css">
+</head>
+<body>
+
+<nav class="navbar sticky-top border-bottom py-3 custom-navbar">
+  <div class="container d-flex align-items-center">
+    
+    <button class="navbar-toggler border-0 shadow-none p-0 me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
+      <i class="bi bi-list text-white" style="font-size: 2rem;"></i>
+    </button>
+
+    <a class="navbar-brand fw-bold mb-0" href="beranda.html">
+      EasyGo<span class="text-accent">.</span>
+    </a>
+    
+    <div class="ms-auto">
+      <a href="booking.html" class="btn btn-outline-brand d-none d-md-inline-block">Pesan Sekarang</a>
+    </div>
+
+  </div>
+</nav>
+
+<div class="offcanvas offcanvas-start custom-offcanvas" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+  <div class="offcanvas-header border-bottom border-secondary">
+    <h5 class="offcanvas-title fw-bold brand-text" id="sidebarMenuLabel">Menu Utama</h5>
+    <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column">
+    <div class="list-group list-group-flush menu-list">
+      <a href="beranda.html" class="list-group-item list-group-item-action active">
+        <i class="bi bi-house-door me-3"></i> Beranda
+      </a>
+      <a href="layanan.html" class="list-group-item list-group-item-action">
+        <i class="bi bi-car-front me-3"></i> Layanan
+      </a>
+      <a href="booking.html" class="list-group-item list-group-item-action">
+        <i class="bi bi-calendar-check me-3"></i> Booking
+      </a>
+      <a href="tracking.html" class="list-group-item list-group-item-action">
+        <i class="bi bi-geo-alt me-3"></i> Tracking
+      </a>
+    </div>
+    
+    <div class="mt-auto pt-4 border-top border-secondary">
+      <div id="sidebar-auth" class="d-flex flex-column gap-3 mb-4">
+        <a href="login.html" class="btn btn-outline-brand fw-bold w-100 text-center">Login</a>
+        <a href="register.html" class="btn btn-brand fw-bold w-100 text-center">Daftar Akun Baru</a>
+      </div>
+      <p class="text-muted small mb-0 text-center">&copy; 2026 EasyGo Transport. <br>Sumatera Selatan, Indonesia.</p>
+    </div>
+  </div>
+</div>
+
+<header class="home-hero">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 hero-text">
+        <span class="eyebrow">Rental Kendaraan Terpercaya</span>
+        <h1 class="display-4 fw-bolder mb-3">Jelajahi Kota Tanpa Batas Bersama Kami</h1>
+        <p class="lead text-muted mb-4">Sewa mobil dan motor dengan mudah, cepat, dan aman. Kami menyediakan berbagai pilihan armada terawat untuk kebutuhan harian hingga perjalanan jauh Anda.</p>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="booking.html" class="btn btn-brand btn-lg fw-bold px-4">Mulai Booking</a>
+          <a href="layanan.html" class="btn btn-outline-light btn-lg fw-bold px-4">Lihat Armada</a>
+        </div>
+      </div>
+      <div class="col-lg-6 d-none d-lg-block text-center">
+        <div class="hero-image-placeholder rounded-4 d-flex align-items-center justify-content-center overflow-hidden border border-secondary">
+            <img src="EasyGo.jpeg">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="py-5 stats-section">
+  <div class="container">
+    <div class="row g-4 text-center">
+      <div class="col-md-3 col-sm-6">
+        <div class="stat-card">
+          <h3 class="stat-number">5,000+</h3>
+          <p class="stat-label">Pelanggan Puas</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="stat-card">
+          <h3 class="stat-number">150+</h3>
+          <p class="stat-label">Kendaraan Terawat</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="stat-card">
+          <h3 class="stat-number">10+</h3>
+          <p class="stat-label">Tahun Berpengalaman</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="stat-card">
+          <h3 class="stat-number">98%</h3>
+          <p class="stat-label">Rating Kepuasan</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-surface-custom">
+  <div class="container py-4">
+    <div class="text-center mb-5">
+      <span class="section-label justify-content-center">Keunggulan</span>
+      <h2 class="mb-1">Kenapa Memilih EasyGo?</h2>
+      <p class="text-muted">Kami berkomitmen memberikan pelayanan terbaik untuk perjalanan Anda.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="feature-card text-center p-4 h-100">
+          <div class="icon-wrap bg-brand-light text-brand mb-3 mx-auto">
+            <i class="bi bi-shield-check fs-2"></i>
+          </div>
+          <h5>Armada Terawat</h5>
+          <p class="text-muted small mb-0">Setiap kendaraan kami melewati pengecekan rutin untuk memastikan kenyamanan dan keamanan Anda.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card text-center p-4 h-100">
+          <div class="icon-wrap bg-brand-light text-brand mb-3 mx-auto">
+            <i class="bi bi-wallet2 fs-2"></i>
+          </div>
+          <h5>Harga Transparan</h5>
+          <p class="text-muted small mb-0">Tidak ada biaya tersembunyi. Harga yang Anda lihat adalah harga yang Anda bayar.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card text-center p-4 h-100">
+          <div class="icon-wrap bg-brand-light text-brand mb-3 mx-auto">
+            <i class="bi bi-headset fs-2"></i>
+          </div>
+          <h5>Layanan 24/7</h5>
+          <p class="text-muted small mb-0">Tim dukungan kami siap membantu Anda kapan saja, mulai dari pemesanan hingga selesai.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container py-4">
+    <div class="text-center mb-5">
+      <span class="section-label justify-content-center">Pilihan Kendaraan Terpopuler</span>
+      <h2 class="mb-1">Jelajahi Armada Kami</h2>
+      <p class="text-muted">Pilih dari berbagai pilihan kendaraan sesuai kebutuhan Anda.</p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-6 col-lg-3">
+        <div class="vehicle-card h-100 p-0 overflow-hidden d-flex flex-column">
+          <div class="position-relative" style="height: 180px;">
+            <span class="position-absolute top-0 start-0 m-3 px-3 py-1 rounded-pill text-white fw-bold" style="background: var(--brand); font-size: 11px; z-index: 2;">City Car</span>
+            <img src="avanza.jpeg" alt="Toyota Avanza" class="w-100 h-100" style="object-fit: cover;">
+          </div>
+          <div class="p-4 d-flex flex-column flex-grow-1">
+            <h5 class="mb-2">TOYOTA AVANZA</h5>
+            <p class="text-muted small mb-4">Cocok untuk kebutuhan harian dan perjalanan keluarga kecil.</p>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <div>
+                <div class="vehicle-price fs-6">Rp 300.000</div>
+                <small class="text-muted" style="font-size: 11px;">/ hari</small>
+              </div>
+              <a href="layanan.html" class="btn btn-sm btn-brand px-3 py-2 rounded-3"><i class="bi bi-eye me-1"></i> Detail</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="vehicle-card h-100 p-0 overflow-hidden d-flex flex-column">
+          <div class="position-relative" style="height: 180px;">
+            <span class="position-absolute top-0 start-0 m-3 px-3 py-1 rounded-pill text-white fw-bold" style="background: var(--brand); font-size: 11px; z-index: 2;">MPV Premium</span>
+            <img src="innova.jpeg" alt="Toyota Innova" class="w-100 h-100" style="object-fit: cover;">
+          </div>
+          <div class="p-4 d-flex flex-column flex-grow-1">
+            <h5 class="mb-2">TOYOTA INNOVA</h5>
+            <p class="text-muted small mb-4">MPV premium untuk perjalanan antarkota dan wisata.</p>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <div>
+                <div class="vehicle-price fs-6">Rp 500.000</div>
+                <small class="text-muted" style="font-size: 11px;">/ hari</small>
+              </div>
+              <a href="layanan.html" class="btn btn-sm btn-brand px-3 py-2 rounded-3"><i class="bi bi-eye me-1"></i> Detail</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="vehicle-card h-100 p-0 overflow-hidden d-flex flex-column">
+          <div class="position-relative" style="height: 180px;">
+            <span class="position-absolute top-0 start-0 m-3 px-3 py-1 rounded-pill text-white fw-bold" style="background: #12B76A; font-size: 11px; z-index: 2;">Matic Motor</span>
+            <img src="honda vario.jpeg" alt="Honda Vario" class="w-100 h-100" style="object-fit: cover;">
+          </div>
+          <div class="p-4 d-flex flex-column flex-grow-1">
+            <h5 class="mb-2">HONDA VARIO 125</h5>
+            <p class="text-muted small mb-4">Pilihan paling hemat dan praktis untuk mobilitas harian.</p>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <div>
+                <div class="vehicle-price fs-6">Rp 85.000</div>
+                <small class="text-muted" style="font-size: 11px;">/ hari</small>
+              </div>
+              <a href="layanan.html" class="btn btn-sm btn-brand px-3 py-2 rounded-3"><i class="bi bi-eye me-1"></i> Detail</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="vehicle-card h-100 p-0 overflow-hidden d-flex flex-column">
+          <div class="position-relative" style="height: 180px;">
+            <span class="position-absolute top-0 start-0 m-3 px-3 py-1 rounded-pill text-white fw-bold" style="background: #12B76A; font-size: 11px; z-index: 2;">Maxi Motor</span>
+            <img src="yamaha nmax.jpeg" alt="Yamaha NMAX" class="w-100 h-100" style="object-fit: cover;">
+          </div>
+          <div class="p-4 d-flex flex-column flex-grow-1">
+            <h5 class="mb-2">YAMAHA NMAX 155</h5>
+            <p class="text-muted small mb-4">Motor matic elegan dengan tenaga besar dan stabil.</p>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <div>
+                <div class="vehicle-price fs-6">Rp 100.000</div>
+                <small class="text-muted" style="font-size: 11px;">/ hari</small>
+              </div>
+              <a href="layanan.html" class="btn btn-sm btn-brand px-3 py-2 rounded-3"><i class="bi bi-eye me-1"></i> Detail</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    <div class="text-center mt-5">
+      <a href="layanan.html" class="btn btn-outline-brand px-4 py-2">Lihat Semua Kendaraan</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="py-5 bg-surface-custom">
+  <div class="container py-4">
+    <div class="text-center mb-5">
+      <span class="section-label justify-content-center">Proses Mudah</span>
+      <h2 class="mb-1">Bagaimana Cara Kerjanya?</h2>
+      <p class="text-muted">Booking mobil hanya dalam 4 langkah sederhana.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="step-card text-center h-100">
+          <div class="step-number">1</div>
+          <h5 class="mt-3">Pilih Kendaraan</h5>
+          <p class="text-muted small">Pilih jenis kendaraan sesuai kebutuhan Anda dari katalog lengkap kami.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="step-card text-center h-100">
+          <div class="step-number">2</div>
+          <h5 class="mt-3">Isi Data Pemesanan</h5>
+          <p class="text-muted small">Masukkan tanggal, waktu, lokasi penjemputan, dan data diri Anda.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="step-card text-center h-100">
+          <div class="step-number">3</div>
+          <h5 class="mt-3">Konfirmasi Pembayaran</h5>
+          <p class="text-muted small">Lakukan pembayaran melalui berbagai metode yang tersedia.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="step-card text-center h-100">
+          <div class="step-number">4</div>
+          <h5 class="mt-3">Nikmati Perjalanan</h5>
+          <p class="text-muted small">Ambil kendaraan Anda dan nikmati perjalanan dengan aman dan nyaman.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container py-4">
+    <div class="text-center mb-5">
+      <span class="section-label justify-content-center">Ulasan Pelanggan</span>
+      <h2 class="mb-1">Apa Kata Pelanggan Kami?</h2>
+      <p class="text-muted">Ribuan pelanggan telah merasakan kepuasan berinteraksi dengan kami.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="testimonial-card p-4 h-100">
+          <div class="d-flex mb-3">
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+          </div>
+          <p class="text-muted mb-3">"Pelayanan yang sangat memuaskan! Prosesnya cepat dan kendaraannya dalam kondisi prima. Pasti akan booking lagi di EasyGo."</p>
+          <div class="d-flex align-items-center gap-3">
+            <div class="rounded-circle bg-brand-light p-2" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center;">
+              <i class="bi bi-person text-brand"></i>
+            </div>
+            <div>
+              <h6 class="mb-0 text-white">Mahendra Obay</h6>
+              <small class="text-muted">Jakarta</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card p-4 h-100">
+          <div class="d-flex mb-3">
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+          </div>
+          <p class="text-muted mb-3">"Sangat recommended! Harganya terjangkau dan tidak ada biaya tersembunyi. Customer service juga sangat responsif dan helpful."</p>
+          <div class="d-flex align-items-center gap-3">
+            <div class="rounded-circle bg-brand-light p-2" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center;">
+              <i class="bi bi-person text-brand"></i>
+            </div>
+            <div>
+              <h6 class="mb-0 text-white">H. Ammar</h6>
+              <small class="text-muted">Bandung</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card p-4 h-100">
+          <div class="d-flex mb-3">
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+          </div>
+          <p class="text-muted mb-3">"Pengalaman rental mobil terbaik yang pernah saya alami. Pelayanan profesional dan mobil yang bersih serta terawat dengan baik."</p>
+          <div class="d-flex align-items-center gap-3">
+            <div class="rounded-circle bg-brand-light p-2" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center;">
+              <i class="bi bi-person text-brand"></i>
+            </div>
+            <div>
+              <h6 class="mb-0 text-white">M. Kefin Alfian</h6>
+              <small class="text-muted">Medan</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-surface-custom">
+  <div class="container py-4">
+    <div class="text-center mb-5">
+      <span class="section-label justify-content-center">Pertanyaan Umum</span>
+      <h2 class="mb-1">FAQ - Pertanyaan yang Sering Diajukan</h2>
+      <p class="text-muted">Temukan jawaban atas pertanyaan umum tentang layanan rental kami.</p>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                Berapa usia minimum untuk menyewa kendaraan?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Usia minimum untuk menyewa kendaraan adalah 18 tahun dengan SIM yang masih berlaku. Untuk kendaraan tertentu, usia minimum bisa lebih tinggi.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                Apa saja yang termasuk dalam harga sewa?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Harga sewa sudah termasuk asuransi dasar, bensin, dan pajak kendaraan. Detail lengkap akan dijelaskan saat proses pemesanan.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                Apakah ada biaya tambahan untuk driver?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Ya, kami menyediakan layanan dengan driver profesional dengan biaya tambahan. Hubungi tim kami untuk detail harga dan ketersediaan.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 cta-section">
+  <div class="container text-center text-white">
+    <h2 class="mb-3 fw-bold">Siap Memulai Petualangan Anda?</h2>
+    <p class="lead mb-4">Pesan kendaraan Anda sekarang dan dapatkan promo spesial untuk pemesanan hari ini!</p>
+    <a href="booking.html" class="btn btn-light btn-lg fw-bold text-brand">Mulai Booking Sekarang</a>
+  </div>
+</section>
+
+<footer class="custom-footer py-5">
+  <div class="container">
+    <div class="row g-4 mb-4">
+      <div class="col-md-3">
+        <h6 class="fw-bold mb-3 text-white">Tentang EasyGo</h6>
+        <p class="text-muted small">EasyGo adalah penyedia layanan rental kendaraan terpercaya di Sumatera Selatan dengan komitmen memberikan pelayanan terbaik.</p>
+      </div>
+      <div class="col-md-3">
+        <h6 class="fw-bold mb-3 text-white">Menu Utama</h6>
+        <ul class="list-unstyled text-muted small">
+          <li><a href="beranda.html" class="text-muted text-decoration-none">Beranda</a></li>
+          <li><a href="layanan.html" class="text-muted text-decoration-none">Layanan</a></li>
+          <li><a href="booking.html" class="text-muted text-decoration-none">Booking</a></li>
+          <li><a href="tracking.html" class="text-muted text-decoration-none">Tracking</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h6 class="fw-bold mb-3 text-white">Kontak</h6>
+        <ul class="list-unstyled text-muted small">
+          <li><i class="bi bi-telephone me-2"></i>+62 (0)711-XXX-XXXX</li>
+          <li><i class="bi bi-envelope me-2"></i>info@easygo.com</li>
+          <li><i class="bi bi-geo-alt me-2"></i>Jl. Srijaya Negara, Bukit Besar, Palembang</li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h6 class="fw-bold mb-3 text-white">Ikuti Kami</h6>
+        <div class="d-flex gap-3">
+          <a href="#" class="text-muted text-decoration-none fs-5"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-muted text-decoration-none fs-5"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-muted text-decoration-none fs-5"><i class="bi bi-whatsapp"></i></a>
+          <a href="#" class="text-muted text-decoration-none fs-5"><i class="bi bi-twitter-x"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr class="border-secondary">
+    <div class="text-center text-muted small">
+      <p class="mb-0">&copy; 2026 EasyGo Transport. Semua hak dilindungi. | <a href="#" class="text-muted text-decoration-none">Kebijakan Privasi</a> | <a href="#" class="text-muted text-decoration-none">Syarat & Ketentuan</a></p>
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script src="ceklogin.js"></script>
+
+<script src="beranda.js"></script>
+
+<script src="animasi.js"></script>
+</body>
+</html>

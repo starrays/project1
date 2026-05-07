@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservasi Kendaraan - EasyGo</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar sticky-top border-bottom py-3 custom-navbar">
+  <div class="container d-flex align-items-center">
+    <button class="navbar-toggler border-0 shadow-none p-0 me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
+      <i class="bi bi-list text-white" style="font-size: 2rem;"></i>
+    </button>
+    <a class="navbar-brand fw-bold mb-0" href="index.html">
+      EasyGo<span class="text-accent">.</span>
+    </a>
+  </div>
+</nav>
+
+<div class="offcanvas offcanvas-start custom-offcanvas" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+  <div class="offcanvas-header border-bottom border-secondary">
+    <h5 class="offcanvas-title fw-bold brand-text" id="sidebarMenuLabel">Menu Utama</h5>
+    <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column">
+    <div class="list-group list-group-flush menu-list">
+      <a href="index.html" class="list-group-item list-group-item-action">
+        <i class="bi bi-house-door me-3"></i> Beranda
+      </a>
+      <a href="layanan.html" class="list-group-item list-group-item-action">
+        <i class="bi bi-car-front me-3"></i> Layanan
+      </a>
+      <a href="booking.html" class="list-group-item list-group-item-action active">
+        <i class="bi bi-calendar-check me-3"></i> Booking
+      </a>
+      <a href="tracking.html" class="list-group-item list-group-item-action">
+        <i class="bi bi-geo-alt me-3"></i> Tracking
+      </a>
+    </div>
+
+    <div class="mt-auto pt-4 border-top border-secondary">
+
+      <div id="sidebar-auth" class="d-flex flex-column gap-3 mb-4">
+        <a href="login.html" class="btn btn-outline-brand fw-bold w-100 text-center">Login</a>
+        <a href="register.html" class="btn btn-brand fw-bold w-100 text-center">Daftar Akun Baru</a>
+      </div>
+
+      <p class="text-muted small mb-0 text-center">&copy; 2026 EasyGo Transport. <br>Sumatera Selatan, Indonesia.</p>
+      
+    </div>
+  </div>
+</div>
+
+<section class="page-hero text-center py-5">
+  <div class="container">
+    <span class="eyebrow">Reservasi Cepat</span>
+    <h1 class="display-5 fw-bolder mb-3">Amankan Kendaraan Anda</h1>
+    <p class="text-muted mx-auto" style="max-width: 600px;">Lengkapi form pemesanan di bawah ini. Pastikan Anda telah memiliki akun dan login untuk memproses transaksi.</p>
+  </div>
+</section>
+
+<main class="py-5">
+  <div class="container">
+    <div class="row g-4 booking-grid">
+
+      <div class="col-lg-8">
+        <form id="bookingForm" class="card-surface p-4 p-md-5">
+
+          <div id="bookingAlert" class="alert" style="display: none;"></div>
+
+          <div class="form-group-wrap mb-4">
+            <h5 class="group-label"><i class="bi bi-person-lines-fill me-2"></i>Informasi Kontak</h5>
+            <div class="row g-3">
+              <div class="col-md-6 field">
+                <label for="customerName">Nama Sesuai KTP</label>
+                <input id="customerName" class="input-control" type="text" placeholder="Masukkan nama lengkap" required minlength="3">
+              </div>
+              <div class="col-md-6 field">
+                <label for="customerPhone">WhatsApp / HP (Aktif)</label>
+                <input id="customerPhone" class="input-control" type="tel" placeholder="0812xxxx" required pattern="[0-9]{10,14}">
+              </div>
+              <div class="col-12 field mt-3">
+                <label for="customerEmail">Alamat Email</label>
+                <input id="customerEmail" class="input-control" type="email" placeholder="contoh@mail.com" required>
+              </div>
+            </div>
+          </div>
+
+          <hr class="border-secondary my-4">
+
+          <div class="form-group-wrap mb-4">
+            <h5 class="group-label"><i class="bi bi-geo-alt-fill me-2"></i>Detail Perjalanan</h5>
+            <div class="row g-3">
+              <div class="col-md-6 field">
+                <label for="packageSelect">Pilihan Kendaraan</label>
+                <select id="packageSelect" class="input-control" required>
+                  <option value="" selected disabled>Pilih Kendaraan...</option>
+
+                </select>
+              </div>
+              <div class="col-md-6 field">
+                <label for="rentalDuration">Masa Sewa</label>
+                <select id="rentalDuration" class="input-control" required>
+                  <option value="" selected disabled>Pilih Durasi...</option>
+                  <option value="1">1 Hari</option>
+                  <option value="2">2 Hari</option>
+                  <option value="3">3 Hari</option>
+                  <option value="7">1 Minggu (7 Hari)</option>
+                </select>
+              </div>
+              <div class="col-md-6 field mt-3">
+                <label for="rentalDate">Tanggal Mulai</label>
+                <input id="rentalDate" class="input-control" type="date" required>
+              </div>
+              <div class="col-md-6 field mt-3">
+                <label for="rentalTime">Waktu Penjemputan</label>
+                <input id="rentalTime" class="input-control" type="time" required>
+              </div>
+              <div class="col-md-6 field mt-3">
+                <label for="pickupLocation">Titik Jemput (Alamat/Hotel)</label>
+                <input id="pickupLocation" class="input-control" type="text" placeholder="Lokasi keberangkatan" required>
+              </div>
+              <div class="col-md-6 field mt-3">
+                <label for="destination">Destinasi Utama</label>
+                <input id="destination" class="input-control" type="text" placeholder="Tujuan perjalanan" required>
+              </div>
+            </div>
+          </div>
+
+          <hr class="border-secondary my-4">
+
+          <div class="form-group-wrap mb-4">
+            <div class="field mb-3">
+              <label for="note">Instruksi Khusus (Opsional)</label>
+              <textarea id="note" class="input-control" rows="3" placeholder="Contoh: Titip helm 2, atau jemput di lobi..."></textarea>
+            </div>
+            
+            <div class="form-check mt-4 mb-2">
+              <input class="form-check-input" type="checkbox" id="termsCheck" required>
+              <label class="form-check-label text-muted" for="termsCheck" style="font-size: 0.9rem; font-weight: 400;">
+                Saya menjamin data di atas benar, memiliki KTP & SIM yang berlaku, dan menyetujui <a href="#" class="text-brand text-decoration-none">Syarat & Ketentuan Rental</a>.
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-brand btn-lg w-100 fw-bold mt-2">Kunci Pesanan & Lanjut Pembayaran</button>
+        </form>
+      </div>
+
+      <div class="col-lg-4">
+        <aside class="sticky-panel card-surface p-4">
+          <h5 class="fw-bold mb-3 border-bottom border-secondary pb-3">Ringkasan Pesanan</h5>
+          
+          <div id="bookingSummary" class="mb-4">
+
+            <p class="text-muted small text-center my-4">Pilih kendaraan dan durasi di samping untuk melihat rincian harga.</p>
+          </div>
+          
+          <div class="security-badge">
+            <i class="bi bi-shield-lock-fill me-2 fs-5"></i>
+            <div>
+              <strong>Aman & Terenkripsi</strong>
+              <div class="small fw-normal">Sistem pemesanan dilindungi standar keamanan.</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="custom-footer py-5">
+  <div class="container">
+    <div class="row g-4 mb-4">
+      <div class="col-md-3">
+        <h6 class="fw-bold mb-3 text-white">Tentang EasyGo</h6>
+        <p class="text-muted small">EasyGo adalah penyedia layanan rental kendaraan terpercaya di Sumatera Selatan dengan komitmen memberikan pelayanan terbaik.</p>
+      </div>
+      <div class="col-md-3">
+        <h6 class="fw-bold mb-3 text-white">Menu Utama</h6>
+        <ul class="list-unstyled text-muted small">
+          <li><a href="index.html" class="text-muted text-decoration-none">Beranda</a></li>
+          <li><a href="layanan.html" class="text-muted text-decoration-none">Layanan</a></li>
+          <li><a href="booking.html" class="text-muted text-decoration-none">Booking</a></li>
+          <li><a href="tracking.html" class="text-muted text-decoration-none">Tracking</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h6 class="fw-bold mb-3 text-white">Kontak</h6>
+        <ul class="list-unstyled text-muted small">
+          <li><i class="bi bi-telephone me-2"></i>+62 (0)711-XXX-XXXX</li>
+          <li><i class="bi bi-envelope me-2"></i>info@easygo.com</li>
+          <li><i class="bi bi-geo-alt me-2"></i>Jl. Srijaya Negara, Bukit Besar, Palembang</li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h6 class="fw-bold mb-3 text-white">Ikuti Kami</h6>
+        <div class="d-flex gap-3">
+          <a href="#" class="text-muted text-decoration-none fs-5"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-muted text-decoration-none fs-5"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-muted text-decoration-none fs-5"><i class="bi bi-whatsapp"></i></a>
+          <a href="#" class="text-muted text-decoration-none fs-5"><i class="bi bi-twitter-x"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr class="border-secondary">
+    <div class="text-center text-muted small">
+      <p class="mb-0">&copy; 2026 EasyGo Transport. Semua hak dilindungi.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Scripts -->
+<script src="ceklogin.js"></script>
+<script src="booking.js"></script>
+<script src="animasi.js"></script>
+</body>
+</html>

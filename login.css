@@ -1,0 +1,193 @@
+/* ── ROOT VARIABLES (NAVY THEME) ── */
+:root {
+  --brand:      #3B82F6; 
+  --brand-dark: #2563EB; 
+  --bg-main:    #0B1121; 
+  --bg-grad:    #172A4F; 
+  --surface:    #111C33; 
+  --input-bg:   #1E2B45; 
+  --border:     #2A3B5C; 
+  --text:       #F8FAFC; 
+  --muted:      #94A3B8; 
+  --error-text: #F87171; 
+  --error-bg:   rgba(239, 68, 68, 0.1); 
+}
+
+/* ── RESET & BASE ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background-color: var(--bg-main); 
+  color-scheme: dark; 
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-image: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-grad) 100%);
+  background-attachment: fixed; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 40px 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ── LAYOUT & CARD ── */
+.login-wrapper {
+  width: 100%;
+  max-width: 400px; /* Lebar card login tetap proporsional */
+  padding: 20px;
+}
+
+.card-surface {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px 32px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ── TYPOGRAPHY ── */
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #60A5FA; 
+  background: rgba(59, 130, 246, 0.15); 
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 12px;
+}
+
+.text-muted {
+  color: var(--muted) !important;
+  font-size: 14px;
+}
+
+/* ── FORM ELEMENTS ── */
+.form-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.form-control {
+  font-family: 'DM Sans', sans-serif;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--input-bg);
+  box-shadow: none;
+  font-size: 14px;
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+.form-control::placeholder {
+  color: #64748B;
+  opacity: 1;
+}
+
+/* ── INPUT GROUP (IKON + TEXT BOX) ── */
+.input-group-text {
+  background-color: var(--input-bg);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-right: none; /* Menyatukan border dengan form-control */
+  transition: all 0.2s ease;
+}
+
+.input-group .form-control {
+  border-left: none; /* Menyatukan border dengan ikon */
+  padding-left: 0;
+}
+
+.input-group:focus-within .input-group-text {
+  border-color: var(--brand);
+  background-color: #17243B;
+  color: var(--brand);
+}
+
+.input-group:focus-within .form-control {
+  border-color: var(--brand);
+  background-color: #17243B;
+  box-shadow: none; /* Hilangkan shadow bawaan agar tidak numpuk */
+}
+
+/* Shadow keseluruhan untuk input group saat fokus */
+.input-group:focus-within {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+  border-radius: 8px;
+}
+
+/* ── BUTTONS & LINKS ── */
+.btn-book {
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 8px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-book:hover {
+  background: var(--brand-dark);
+}
+
+.btn-book:active {
+  transform: scale(0.98);
+}
+
+.text-brand {
+  color: #60A5FA;
+}
+
+.text-brand:hover {
+  color: #93C5FD;
+}
+
+/* ── ERROR MESSAGE (NAVY THEME) ── */
+.error-msg {
+  background: var(--error-bg);
+  color: var(--error-text);
+  border: 1px solid #EF4444;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.error-msg i {
+  font-size: 15px;
+}
+
+.hidden {
+  display: none !important;
+}

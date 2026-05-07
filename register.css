@@ -1,0 +1,225 @@
+/* ── ROOT VARIABLES (NAVY THEME) ── */
+:root {
+  --brand:      #3B82F6; 
+  --brand-dark: #2563EB; 
+  --bg-main:    #0B1121; 
+  --bg-grad:    #172A4F; 
+  --surface:    #111C33; 
+  --input-bg:   #1E2B45; 
+  --border:     #2A3B5C; 
+  --text:       #F8FAFC; 
+  --muted:      #94A3B8; 
+  --error-text: #F87171; 
+  --error-bg:   rgba(239, 68, 68, 0.1); 
+}
+
+/* ── RESET & BASE ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Mencegah background putih muncul saat discroll */
+html {
+  min-height: 100%;
+  background-color: var(--bg-main); 
+  color-scheme: dark; 
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  
+  /* Background gradasi navy */
+  background-image: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-grad) 100%);
+  background-attachment: fixed; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 50px 0; 
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ── LAYOUT & CARD ── */
+.register-wrapper {
+  width: 100%;
+  max-width: 900px; /* <--- Diubah dari 700px menjadi 900px agar form lebih lebar ke samping */
+  padding: 0 20px;
+}
+
+.card-surface {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); 
+}
+
+/* ── TYPOGRAPHY ── */
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #60A5FA; 
+  background: rgba(59, 130, 246, 0.15); 
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 12px;
+}
+
+.text-muted {
+  color: var(--muted) !important;
+}
+
+/* ── FORM ELEMENTS ── */
+.form-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.form-control {
+  font-family: 'DM Sans', sans-serif;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--input-bg);
+  box-shadow: none;
+  font-size: 14px;
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+.form-control::placeholder {
+  color: #64748B;
+  opacity: 1;
+}
+
+/* Agar icon kalender pada input date tetap terlihat di tema gelap */
+.form-control[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.form-control:focus {
+  border-color: var(--brand);
+  background-color: #17243B; 
+  color: var(--text);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+/* Penyesuaian Checkbox & Radio */
+.form-check-input {
+  background-color: var(--input-bg);
+  border-color: var(--border);
+}
+
+.form-check-input:checked {
+  background-color: var(--brand);
+  border-color: var(--brand);
+}
+
+/* ── STYLING KHUSUS INPUT FILE (CHOOSE FILE) ── */
+.form-control[type="file"] {
+  padding: 6px; 
+}
+
+.form-control[type="file"]::file-selector-button {
+  background-color: var(--brand);
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  margin-right: 12px;
+  border-radius: 6px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.form-control[type="file"]::file-selector-button:hover {
+  background-color: var(--brand-dark);
+}
+
+/* ── BUTTONS & LINKS ── */
+.btn-book {
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 8px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-book:hover {
+  background: var(--brand-dark);
+}
+
+.btn-book:active {
+  transform: scale(0.98);
+}
+
+.text-brand {
+  color: #60A5FA; 
+}
+
+.text-brand:hover {
+  color: #93C5FD;
+}
+
+/* ── ERROR MESSAGE STYLES ── */
+.field-error {
+  color: var(--error-text);
+  font-size: 12.5px;
+  font-weight: 500;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.field-error i {
+  font-size: 14px;
+}
+
+.form-control.input-error {
+  border-color: #EF4444;
+  background-color: var(--error-bg);
+  color: var(--text);
+}
+
+.form-control.input-error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 576px) {
+  .card-surface {
+    padding: 30px 20px;
+  }
+}

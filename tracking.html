@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lacak Pesanan - EasyGo</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="tracking.css">
+</head>
+<body class="reveal">
+
+<nav class="navbar sticky-top border-bottom py-3 custom-navbar">
+  <div class="container d-flex align-items-center">
+    <button class="navbar-toggler border-0 shadow-none p-0 me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+      <i class="bi bi-list text-white" style="font-size: 2rem;"></i>
+    </button>
+    <a class="navbar-brand fw-bold mb-0" href="index.html">
+      EasyGo<span class="text-accent">.</span>
+    </a>
+    <div class="ms-auto">
+      <a href="booking.html" class="btn btn-outline-brand d-none d-md-inline-block">Pesan Sekarang</a>
+    </div>
+  </div>
+</nav>
+
+<div class="offcanvas offcanvas-start custom-offcanvas" tabindex="-1" id="sidebarMenu">
+  <div class="offcanvas-header border-bottom border-secondary">
+    <h5 class="offcanvas-title fw-bold brand-text">Menu Utama</h5>
+    <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column">
+    <div class="list-group list-group-flush menu-list mb-4">
+      <a href="index.html" class="list-group-item list-group-item-action">
+        <i class="bi bi-house-door me-3"></i> Beranda
+      </a>
+      <a href="layanan.html" class="list-group-item list-group-item-action">
+        <i class="bi bi-car-front me-3"></i> Layanan
+      </a>
+      <a href="booking.html" class="list-group-item list-group-item-action">
+        <i class="bi bi-calendar-check me-3"></i> Booking
+      </a>
+      <a href="tracking.html" class="list-group-item list-group-item-action active">
+        <i class="bi bi-geo-alt me-3"></i> Tracking
+      </a>
+    </div>
+ 
+    <div class="mt-auto pt-4 border-top border-secondary">
+      <div id="sidebar-auth" class="d-flex flex-column gap-3 mb-4">
+        <a href="login.html" class="btn btn-outline-brand fw-bold w-100 text-center">Login</a>
+        <a href="register.html" class="btn btn-brand fw-bold w-100 text-center">Daftar Akun Baru</a>
+      </div>
+      <p class="text-muted small mb-0 text-center">&copy; 2026 EasyGo Transport. <br>Sumatera Selatan, Indonesia.</p>
+    </div>
+  </div>
+</div>
+
+<section class="page-hero text-center py-5">
+  <div class="container">
+    <span class="eyebrow">Real-Time Monitoring</span>
+    <h1 class="display-5 fw-bolder mb-3">Lacak Perjalanan Anda</h1>
+    <p class="text-muted mx-auto" style="max-width: 600px;">Pantau status pembayaran, kesiapan kendaraan, hingga posisi unit secara langsung melalui sistem integrasi EasyGo.</p>
+  </div>
+</section>
+
+<main class="py-5">
+    <div class="container">
+
+        <div class="card-surface p-4 mb-5 reveal">
+            <div class="row g-3 align-items-center">
+                <div class="col-md-7 col-lg-8">
+                    <div class="input-group search-group">
+                        <span class="input-group-text border-0 bg-transparent text-muted ms-2"><i class="bi bi-hash fs-5"></i></span>
+                        <input id="trackingCodeInput" class="form-control form-control-lg border-0 shadow-none bg-transparent" type="text" placeholder="Masukkan kode booking (Misal: BK-7788)">
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4 d-flex gap-2">
+                    <button id="trackBtn" class="btn btn-brand btn-lg fw-bold flex-grow-1">Lacak Pesanan</button>
+                    <button id="useLatestBooking" class="btn btn-outline-secondary btn-lg border-secondary text-white" title="Gunakan Booking Terakhir"><i class="bi bi-clock-history"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="trackingResult" class="hidden reveal">
+            <div class="row g-4">
+
+                <div class="col-lg-7">
+                    <div class="card-surface p-4 p-md-5 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="group-label mb-0"><i class="bi bi-bar-chart-steps me-2"></i>Status Perjalanan</h5>
+                            <span id="finishBadge" class="badge bg-success hidden px-3 py-2">Pesanan Telah Selesai</span>
+                        </div>
+                        
+                        <div class="status-stepper mb-5" id="statusStepper">
+                            <div class="progress-line" id="stepperLine"></div>
+
+                        </div>
+                        
+                        <hr class="border-secondary mb-4">
+                        
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-6" id="trackingVehicle">
+
+                            </div>
+                            <div class="col-md-6 d-flex flex-column">
+                                <div id="trackingPayment" class="flex-grow-1">
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="paymentActionBlock" class="action-block payment-block hidden mt-2 mb-4">
+                            <h6 class="mb-2 text-warning"><i class="bi bi-exclamation-triangle-fill me-2"></i>Menunggu Pembayaran</h6>
+                            <p class="text-muted small mb-3">Silakan pilih metode pembayaran untuk memproses pesanan Anda ke tahap konfirmasi.</p>
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <input type="radio" class="btn-check" name="payMethod" id="payEwallet" value="E-Wallet" checked>
+                                    <label class="btn btn-outline-brand w-100 py-2 custom-radio-btn" for="payEwallet"><i class="bi bi-wallet2 me-2"></i>E-Wallet</label>
+                                </div>
+                                <div class="col-6">
+                                    <input type="radio" class="btn-check" name="payMethod" id="payCash" value="Cash">
+                                    <label class="btn btn-outline-brand w-100 py-2 custom-radio-btn" for="payCash"><i class="bi bi-cash-coin me-2"></i>Cash</label>
+                                </div>
+                            </div>
+                            <button id="confirmPayBtn" class="btn btn-brand w-100 fw-bold py-2">Konfirmasi Pembayaran</button>
+                        </div>
+
+                        <div id="progressActionBlock" class="action-block progress-block hidden mt-2 mb-4">
+                            <h6 class="mb-2 text-brand"><i class="bi bi-cpu-fill me-2"></i>Simulasi Progres Sistem</h6>
+                            <p class="text-muted small mb-3">Gunakan tombol di bawah ini untuk menyimulasikan pembaruan status dari pihak admin atau driver di lapangan.</p>
+                            <button id="nextProgressBtn" class="btn btn-outline-brand w-100 fw-bold py-2">Proses Selanjutnya</button>
+                        </div>
+                        
+                        <div class="detail-grid" id="trackingDetails">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="card-surface p-4 p-md-5 h-100 d-flex flex-column">
+                        <h5 class="group-label mb-4"><i class="bi bi-geo-alt-fill me-2"></i>Pemantauan Visual</h5>
+                        
+                        <div class="fake-map mb-4 flex-grow-1">
+                            <div class="route"></div>
+                            <div class="route-fill" id="routeFill"></div>
+                            <div class="marker start"></div>
+                            <div class="marker end"></div>
+                            <div id="carMarker" class="car-marker">
+                                <i class="bi bi-car-front-fill"></i>
+                            </div>
+                            <span class="map-tag pickup">Titik Jemput</span>
+                            <span class="map-tag destination">Tujuan</span>
+                        </div>
+                        
+                        <div class="alert border-0 bg-brand-light text-white mb-0 d-flex align-items-center" id="mapNote">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="trackingEmpty" class="card-surface text-center py-5 reveal">
+            <div class="py-5">
+                <div class="mb-4 d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 100px; height: 100px; background: rgba(59, 130, 246, 0.1);">
+                    <i class="bi bi-geo text-brand" style="font-size: 3rem;"></i>
+                </div>
+                <h3 class="fw-bold">Belum Ada Data Lacak</h3>
+                <p class="text-muted mx-auto" style="max-width: 400px;">Silakan masukkan kode booking Anda di atas atau lakukan reservasi terlebih dahulu untuk melihat progres perjalanan.</p>
+                <a href="booking.html" class="btn btn-outline-brand mt-3 px-4 py-2">Buat Reservasi Baru</a>
+            </div>
+        </div>
+        
+    </div>
+</main>
+
+<footer class="custom-footer py-5 mt-5">
+  <div class="container">
+    <div class="row g-4 mb-4">
+      <div class="col-md-3">
+        <h6 class="fw-bold mb-3 text-white">Tentang EasyGo</h6>
+        <p class="text-muted small">EasyGo adalah penyedia layanan rental kendaraan terpercaya di Sumatera Selatan dengan komitmen memberikan pelayanan terbaik.</p>
+      </div>
+      <div class="col-md-3">
+        <h6 class="fw-bold mb-3 text-white">Menu Utama</h6>
+        <ul class="list-unstyled text-muted small">
+          <li><a href="index.html" class="text-muted text-decoration-none">Beranda</a></li>
+          <li><a href="layanan.html" class="text-muted text-decoration-none">Layanan</a></li>
+          <li><a href="booking.html" class="text-muted text-decoration-none">Booking</a></li>
+          <li><a href="tracking.html" class="text-muted text-decoration-none">Tracking</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h6 class="fw-bold mb-3 text-white">Kontak</h6>
+        <ul class="list-unstyled text-muted small">
+          <li><i class="bi bi-telephone me-2"></i>+62 (0)711-XXX-XXXX</li>
+          <li><i class="bi bi-envelope me-2"></i>info@easygo.com</li>
+          <li><i class="bi bi-geo-alt me-2"></i>Jl. Srijaya Negara, Bukit Besar, Palembang</li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h6 class="fw-bold mb-3 text-white">Ikuti Kami</h6>
+        <div class="d-flex gap-3">
+          <a href="#" class="text-muted text-decoration-none fs-5"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-muted text-decoration-none fs-5"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-muted text-decoration-none fs-5"><i class="bi bi-whatsapp"></i></a>
+          <a href="#" class="text-muted text-decoration-none fs-5"><i class="bi bi-twitter-x"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr class="border-secondary">
+    <div class="text-center text-muted small">
+      <p class="mb-0">&copy; 2026 EasyGo Transport. Semua hak dilindungi. | <a href="#" class="text-muted text-decoration-none">Kebijakan Privasi</a> | <a href="#" class="text-muted text-decoration-none">Syarat & Ketentuan</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="ceklogin.js"></script>
+<script src="tracking.js"></script>
+<script src="animasi.js"></script>
+</body>
+</html>
